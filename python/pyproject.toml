@@ -178,6 +178,14 @@ dev = [
     "pytest-timeout>=2.3.1",
 ]
 
+# Benchmarking dependencies (`make benchmark-pytest`). Kept out of `dev` so the
+# memray-backed memory pass, which is 3.11+/Linux+macOS only, can't break the
+# 3.10 dev resolution.
+bench = [
+    "pytest-benchmark>=5.1.0",
+    "pytest-benchmem>=0.5.4; python_version>='3.11'",
+]
+
 # Linting dependencies
 lint = [
     "openai>=2.6.0",
